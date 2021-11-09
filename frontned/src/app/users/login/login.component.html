@@ -1,0 +1,27 @@
+<mat-grid-list cols="12" rowHeight="100%">
+    <mat-grid-tile colspan="3">1</mat-grid-tile>
+    <mat-grid-tile colspan="6">
+        <form class="example-form" #polylogin="ngForm" (ngSubmit)="getLogin(polylogin.value)">
+            <h2 class="heading">
+                Login To your Account
+            </h2>
+            <mat-form-field class="example-full-width" color="accent" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input ngModel name="email" matInput placeholder="enter your email">
+            </mat-form-field>
+            <mat-form-field appearance="fill" color="accent" class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input ngModel name="password" matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <div class="s-button">
+                <button mat-button color="accent">Submit</button>
+            </div>
+        </form>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">2</mat-grid-tile>
+</mat-grid-list>
